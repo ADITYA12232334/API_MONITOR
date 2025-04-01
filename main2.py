@@ -87,10 +87,10 @@ async def delete_user(id:UUID):
         if user.id==id:
             db.remove(user)
             return
-        raise HTTPException(
-            status_code=404, detail=f"Delete user failed, id {id} not found."
+    raise HTTPException(
+        status_code=404, detail=f"Delete user failed, id {id} not found."
 
-        )
+    )
         
 class UpdateUser(BaseModel):
     first_name: Optional[str] = None
